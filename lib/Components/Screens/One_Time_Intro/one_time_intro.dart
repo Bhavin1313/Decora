@@ -209,8 +209,7 @@ class _OneTimeIntroState extends State<OneTimeIntro> {
           ),
         ),
         onDone: () async {
-          Get.offNamedUntil("/splash", (routes) => false);
-
+          Get.offNamedUntil('/splash', (routes) => false);
           SharedPreferences preferences = await SharedPreferences.getInstance();
           preferences.setBool("visited", true);
         },

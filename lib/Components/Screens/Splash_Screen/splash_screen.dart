@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
       const Duration(seconds: 4),
       () {
-        Get.offNamedUntil("/login", (routes) => false);
+        Get.offNamedUntil('/login', (routes) => false);
       },
     );
     return Scaffold(
