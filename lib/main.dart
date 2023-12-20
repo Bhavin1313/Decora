@@ -1,3 +1,5 @@
+import 'package:decora/Components/Screens/Login/Views/login_screen.dart';
+import 'package:decora/Components/Screens/One_Time_Intro/one_time_intro.dart';
 import 'package:decora/Components/Screens/Splash_Screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,29 +13,17 @@ void main() {
       ),
       getPages: [
         GetPage(
-          name: '/',
+          name: '/splash',
           page: () => SplashScreen(),
         ),
-        // GetPage(
-        //   name: '/signup',
-        //   page: () => SignUp_Page(),
-        // ),
-        // GetPage(
-        //   name: '/chat',
-        //   page: () => Chat_Screen(),
-        // ),
-        // GetPage(
-        //   name: '/tab',
-        //   page: () => TabPage(),
-        // ),
-        // GetPage(
-        //   name: '/d',
-        //   page: () => R_Detail(),
-        // ),
-        // GetPage(
-        //   name: '/',
-        //   page: () => Agree(),
-        // ),
+        GetPage(
+          name: '/',
+          page: () => OneTimeIntro(),
+        ),
+        GetPage(
+          name: '/login',
+          page: () => Login(),
+        ),
       ],
     ),
   );
