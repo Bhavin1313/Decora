@@ -38,6 +38,7 @@ dependencies:
   get:
   introduction_screen:
   shared_preferences:
+  google_fonts: ^6.1.0
 
 
 dev_dependencies:

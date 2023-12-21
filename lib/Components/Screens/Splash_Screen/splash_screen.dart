@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              "lib/Assets/d1.jpg",
+              "lib/Assets/image 5.png",
             ),
             fit: BoxFit.cover,
           ),
@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  "lib/Assets/d2.webp",
+                  "lib/Assets/Group 426.png",
                 ),
                 fit: BoxFit.cover,
               ),

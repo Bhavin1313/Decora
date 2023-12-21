@@ -31,7 +31,7 @@ class _OneTimeIntroState extends State<OneTimeIntro> {
                   width: w,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("lib/Assets/2.jpg"),
+                      image: AssetImage("lib/Assets/image 1.png"),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.circular(20),
@@ -89,7 +89,8 @@ class _OneTimeIntroState extends State<OneTimeIntro> {
                   width: w,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("lib/Assets/2.jpg"),
+                      image: AssetImage(
+                          "lib/Assets/1_pBwpNXRuMrBkI49kPUEaLQ 1.png"),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.circular(20),
@@ -147,7 +148,7 @@ class _OneTimeIntroState extends State<OneTimeIntro> {
                   width: w,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("lib/Assets/2.jpg"),
+                      image: AssetImage("lib/Assets/833a34153d 1.png"),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.circular(20),
