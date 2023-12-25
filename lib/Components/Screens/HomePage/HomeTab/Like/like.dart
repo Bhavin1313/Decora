@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-import '../../../../Utils/global.dart';
+import '../../../../../Utils/global.dart';
 
-class History extends StatefulWidget {
-  const History({super.key});
+class Like extends StatefulWidget {
+  const Like({super.key});
 
   @override
-  State<History> createState() => _HistoryState();
+  State<Like> createState() => _LikeState();
 }
 
-class _HistoryState extends State<History> {
+class _LikeState extends State<Like> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Text(
-          "History",
+          "Like",
           style: Global.size35,
         ),
       ),

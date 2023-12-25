@@ -1,8 +1,10 @@
+import 'dart:ui';
+
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import 'package:decora/Components/Screens/HomePage/HomeTab/history.dart';
-import 'package:decora/Components/Screens/HomePage/HomeTab/home.dart';
-import 'package:decora/Components/Screens/HomePage/HomeTab/like.dart';
-import 'package:decora/Components/Screens/HomePage/HomeTab/profile.dart';
+import 'package:decora/Components/Screens/HomePage/HomeTab/History/history.dart';
+import 'package:decora/Components/Screens/HomePage/HomeTab/Home/home.dart';
+import 'package:decora/Components/Screens/HomePage/HomeTab/Like/like.dart';
+import 'package:decora/Components/Screens/HomePage/HomeTab/Profile/profile.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -62,6 +64,8 @@ class _HomePageState extends State<HomePage> {
 
         height: 70,
         iconSize: 32,
+        elevation: 100,
+
         inactiveColor: Color(0xff6E6E6E),
         activeColor: Color(0xffE4A11B),
         gapLocation: GapLocation.center,

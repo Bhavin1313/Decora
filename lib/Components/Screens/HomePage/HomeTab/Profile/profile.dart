@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../Utils/global.dart';
+import '../../../../../Utils/global.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
