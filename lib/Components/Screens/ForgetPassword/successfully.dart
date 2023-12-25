@@ -20,7 +20,7 @@ class _SuccessfullyState extends State<Successfully> {
         toolbarHeight: 30,
         leading: IconButton(
           onPressed: () {
-            Get.back();
+            Get.offNamedUntil('/login', (routes) => false);
           },
           icon: Icon(
             Icons.arrow_back,

@@ -145,17 +145,22 @@ class _LoginState extends State<Login> {
                     SizedBox(
                       height: h * .06,
                     ),
-                    Container(
-                      height: h * .07,
-                      width: w,
-                      decoration: BoxDecoration(
-                        color: Color(0xffE4A11B),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Login",
-                        style: Global.size19,
+                    GestureDetector(
+                      onTap: () {
+                        Get.offNamedUntil('/home', (routes) => false);
+                      },
+                      child: Container(
+                        height: h * .07,
+                        width: w,
+                        decoration: BoxDecoration(
+                          color: Color(0xffE4A11B),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Login",
+                          style: Global.size19,
+                        ),
                       ),
                     ),
                     SizedBox(

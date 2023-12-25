@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Global {
+  static TextStyle size16b = GoogleFonts.getFont(
+    'Montserrat',
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: Color(0xff888888),
+  );
+
   static TextStyle size16 = GoogleFonts.getFont(
     'Montserrat',
     fontSize: 16,

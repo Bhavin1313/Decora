@@ -4,18 +4,22 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../Utils/global.dart';
 
-class EnterGmail extends StatefulWidget {
-  const EnterGmail({super.key});
+class UserDetails extends StatefulWidget {
+  const UserDetails({super.key});
 
   @override
-  State<EnterGmail> createState() => _EnterGmailState();
+  State<UserDetails> createState() => _UserDetailsState();
 }
 
-class _EnterGmailState extends State<EnterGmail> {
-  String? email;
+class _UserDetailsState extends State<UserDetails> {
+  String? fname;
+  String? lname;
   String? pass;
-  TextEditingController email_c = TextEditingController();
+  String? r_pass;
+  TextEditingController fname_c = TextEditingController();
+  TextEditingController lname_c = TextEditingController();
   TextEditingController pass_c = TextEditingController();
+  TextEditingController rpass_c = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -68,9 +72,34 @@ class _EnterGmailState extends State<EnterGmail> {
                       SizedBox(
                         height: h * .018,
                       ),
-                      Text(
-                        "To get started, what’s your email?",
-                        style: Global.size15,
+                      Container(
+                        height: h * .07,
+                        width: w,
+                        child: TextFormField(
+                          validator: (val) {
+                            if (val!.isEmpty) {
+                              return "Enter first name";
+                            } else {
+                              return null;
+                            }
+                          },
+                          controller: fname_c,
+                          onSaved: (val) {
+                            fname = val!;
+                          },
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintText: "Enter First Name",
+                            hintStyle: Global.size16,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: BorderSide(
+                                color: Color(0xffB8B8B8),
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                       SizedBox(
                         height: h * .015,
@@ -81,14 +110,78 @@ class _EnterGmailState extends State<EnterGmail> {
                         child: TextFormField(
                           validator: (val) {
                             if (val!.isEmpty) {
-                              return "Enter Valid email";
+                              return "Enter Last Name";
                             } else {
                               return null;
                             }
                           },
-                          controller: email_c,
+                          controller: lname_c,
                           onSaved: (val) {
-                            email = val!;
+                            lname = val!;
+                          },
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintText: "Enter Last Name",
+                            hintStyle: Global.size16,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: BorderSide(
+                                color: Color(0xffB8B8B8),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: h * .015,
+                      ),
+                      Container(
+                        height: h * .07,
+                        width: w,
+                        child: TextFormField(
+                          validator: (val) {
+                            if (val!.isEmpty) {
+                              return "Enter Password";
+                            } else {
+                              return null;
+                            }
+                          },
+                          controller: pass_c,
+                          onSaved: (val) {
+                            pass = val!;
+                          },
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintText: "Enter Password ",
+                            hintStyle: Global.size16,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: BorderSide(
+                                color: Color(0xffB8B8B8),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: h * .015,
+                      ),
+                      Container(
+                        height: h * .07,
+                        width: w,
+                        child: TextFormField(
+                          validator: (val) {
+                            if (val!.isEmpty) {
+                              return "Re-Enter Password";
+                            } else {
+                              return null;
+                            }
+                          },
+                          controller: rpass_c,
+                          onSaved: (val) {
+                            r_pass = val!;
                           },
                           decoration: InputDecoration(
                             filled: true,
@@ -109,7 +202,7 @@ class _EnterGmailState extends State<EnterGmail> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Get.toNamed('/userdetails');
+                          Get.toNamed('/address');
                         },
                         child: Container(
                           height: h * .07,
@@ -169,7 +262,7 @@ class _EnterGmailState extends State<EnterGmail> {
                         ],
                       ),
                       SizedBox(
-                        height: h * .02,
+                        height: h * .05,
                       ),
                       Container(
                         height: h * .07,
@@ -273,6 +366,9 @@ class _EnterGmailState extends State<EnterGmail> {
                             ),
                           ],
                         ),
+                      ),
+                      SizedBox(
+                        height: h * .03,
                       ),
                     ],
                   ),

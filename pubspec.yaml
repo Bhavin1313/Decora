@@ -39,6 +39,8 @@ dependencies:
   introduction_screen:
   shared_preferences:
   google_fonts: ^6.1.0
+  animated_bottom_navigation_bar:
+  provider:
 
 
 dev_dependencies:

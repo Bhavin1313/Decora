@@ -144,7 +144,7 @@ class _ForgetPassState extends State<ForgetPass> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Get.toNamed('/successful');
+                        Get.toNamed('/fotp');
                       },
                       child: Container(
                         height: h * .07,
