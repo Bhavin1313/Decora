@@ -71,6 +71,13 @@ class Global {
     color: Color(0xff787878),
   );
 
+  static TextStyle size17black = GoogleFonts.getFont(
+    'Montserrat',
+    fontWeight: FontWeight.w600,
+    fontSize: 17,
+    color: Color(0xff000000),
+  );
+
   static TextStyle size13 = GoogleFonts.getFont(
     'Montserrat',
     fontSize: 13,
@@ -92,10 +99,31 @@ class Global {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle size20white = GoogleFonts.getFont(
+    'Montserrat',
+    fontSize: 20,
+    color: Color(0xffFFFFFF),
+    fontWeight: FontWeight.w600,
+  );
+
   static TextStyle size20 = GoogleFonts.getFont(
     'Montserrat',
     fontSize: 20,
     color: Color(0xff000000),
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle size15white = GoogleFonts.getFont(
+    'Montserrat',
+    fontSize: 15,
+    color: Color(0xffFFFFFF),
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle size22white = GoogleFonts.getFont(
+    'Montserrat',
+    fontSize: 22,
+    color: Color(0xffFFFFFF),
     fontWeight: FontWeight.w600,
   );
 
