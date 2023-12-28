@@ -13,7 +13,6 @@ import 'package:decora/Components/Screens/Splash_Screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'Components/Screens/ForgetPassword/forgetpassword.dart';
 import 'Components/Screens/ForgetPassword/fotp.dart';
 import 'Components/Screens/HomePage/Controller/indexCon.dart';
@@ -28,88 +27,90 @@ void main() async {
 
   bool isVisitOnce = preferences.getBool("visited") ?? false;
 
-  runApp(MultiProvider(
-    providers: [
-      ListenableProvider<ChangeIndexProvider>(
-        create: (context) => ChangeIndexProvider(),
-      ),
-    ],
-    builder: (context, child) => GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
-      initialRoute: (isVisitOnce == true) ? '/splash' : '/',
-      getPages: [
-        GetPage(
-          name: '/splash',
-          page: () => SplashScreen(),
-        ),
-        GetPage(
-          name: '/one',
-          page: () => OneTimeIntro(),
-        ),
-        GetPage(
-          name: '/login',
-          page: () => Login(),
-        ),
-        GetPage(
-          name: '/entergmail',
-          page: () => EnterGmail(),
-        ),
-        GetPage(
-          name: '/otp',
-          page: () => OtpPage(),
-        ),
-        GetPage(
-          name: '/setpass',
-          page: () => SetPassworld(),
-        ),
-        GetPage(
-          name: '/forpass',
-          page: () => ForgetPass(),
-        ),
-        GetPage(
-          name: '/successful',
-          page: () => Successfully(),
-        ),
-        GetPage(
-          name: '/',
-          page: () => Screen1(),
-        ),
-        GetPage(
-          name: '/screen2',
-          page: () => Screen2(),
-        ),
-        GetPage(
-          name: '/screen3',
-          page: () => Screen3(),
-        ),
-        GetPage(
-          name: '/fotp',
-          page: () => FOtpPage(),
-        ),
-        GetPage(
-          name: '/userdetails',
-          page: () => UserDetails(),
-        ),
-        GetPage(
-          name: '/address',
-          page: () => Address(),
-        ),
-        GetPage(
-          name: '/gender',
-          page: () => Gender(),
-        ),
-        GetPage(
-          name: '/number',
-          page: () => Number(),
-        ),
-        GetPage(
-          name: '/home',
-          page: () => HomePage(),
+  runApp(
+    MultiProvider(
+      providers: [
+        ListenableProvider<ChangeIndexProvider>(
+          create: (context) => ChangeIndexProvider(),
         ),
       ],
+      builder: (context, child) => GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          useMaterial3: true,
+        ),
+        initialRoute: (isVisitOnce == true) ? '/splash' : '/',
+        getPages: [
+          GetPage(
+            name: '/splash',
+            page: () => SplashScreen(),
+          ),
+          GetPage(
+            name: '/one',
+            page: () => OneTimeIntro(),
+          ),
+          GetPage(
+            name: '/login',
+            page: () => Login(),
+          ),
+          GetPage(
+            name: '/entergmail',
+            page: () => EnterGmail(),
+          ),
+          GetPage(
+            name: '/otp',
+            page: () => OtpPage(),
+          ),
+          GetPage(
+            name: '/setpass',
+            page: () => SetPassworld(),
+          ),
+          GetPage(
+            name: '/forpass',
+            page: () => ForgetPass(),
+          ),
+          GetPage(
+            name: '/successful',
+            page: () => Successfully(),
+          ),
+          GetPage(
+            name: '/',
+            page: () => Screen1(),
+          ),
+          GetPage(
+            name: '/screen2',
+            page: () => Screen2(),
+          ),
+          GetPage(
+            name: '/screen3',
+            page: () => Screen3(),
+          ),
+          GetPage(
+            name: '/fotp',
+            page: () => FOtpPage(),
+          ),
+          GetPage(
+            name: '/userdetails',
+            page: () => UserDetails(),
+          ),
+          GetPage(
+            name: '/address',
+            page: () => Address(),
+          ),
+          GetPage(
+            name: '/gender',
+            page: () => Gender(),
+          ),
+          GetPage(
+            name: '/number',
+            page: () => Number(),
+          ),
+          GetPage(
+            name: '/home',
+            page: () => HomePage(),
+          ),
+        ],
+      ),
     ),
-  ));
+  );
 }
