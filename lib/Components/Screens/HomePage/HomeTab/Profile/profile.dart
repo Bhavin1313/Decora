@@ -274,17 +274,22 @@ class _ProfileState extends State<Profile> {
                         ],
                       ),
                     ),
-                    Container(
-                      height: h * .07,
-                      width: w,
-                      decoration: BoxDecoration(
-                        color: Color(0xffEFC776),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Log Out",
-                        style: Global.size20white,
+                    GestureDetector(
+                      onTap: () {
+                        Get.offNamedUntil('/login', (route) => false);
+                      },
+                      child: Container(
+                        height: h * .07,
+                        width: w,
+                        decoration: BoxDecoration(
+                          color: Color(0xffEFC776),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Log Out",
+                          style: Global.size20white,
+                        ),
                       ),
                     ),
                     SizedBox(

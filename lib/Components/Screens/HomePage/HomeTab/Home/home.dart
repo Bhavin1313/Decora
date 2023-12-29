@@ -68,108 +68,130 @@ class _HomeState extends State<Home> {
                       List<Catagory_Model>? catagory = snapshot.data;
                       return Padding(
                         padding: const EdgeInsets.all(10),
-                        child: GridView.builder(
-                            shrinkWrap: true,
-                            itemCount: catagory!.length,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              mainAxisExtent: 230,
-                              crossAxisSpacing: 0,
+                        child: Column(
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                color: Colors.grey,
+                              ),
                             ),
-                            itemBuilder: (ctx, i) {
-                              return GestureDetector(
-                                onTap: () {
-                                  Get.toNamed(
-                                    'catd',
-                                    arguments: catagory![i],
-                                  );
-                                },
-                                child: Card(
-                                  elevation: 0,
-                                  child: Container(
-                                    padding: EdgeInsets.all(5),
-                                    height: h * .289,
-                                    width: w * .5,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
-                                      color: Color(0xffFFFFFF),
-                                    ),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Stack(
-                                          children: [
-                                            Container(
-                                              height: h * .18,
-                                              width: w * .45,
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      "${catagory[i].img}"),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                            Positioned(
-                                              top: h * .01,
-                                              right: w * .02,
-                                              child: CircleAvatar(
-                                                radius: 15,
-                                                backgroundColor: Colors.white,
-                                                child: GestureDetector(
-                                                  onTap: () {
-                                                    if (!like.contains(
-                                                        catagory[i])) {
-                                                      like.add(catagory[i]);
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Expanded(
+                              flex: 2,
+                              child: GridView.builder(
+                                  shrinkWrap: true,
+                                  itemCount: catagory!.length,
+                                  gridDelegate:
+                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2,
+                                    mainAxisExtent: 248,
+                                    crossAxisSpacing: 0,
+                                  ),
+                                  itemBuilder: (ctx, i) {
+                                    return GestureDetector(
+                                      onTap: () {
+                                        Get.toNamed(
+                                          'catd',
+                                          arguments: catagory![i],
+                                        );
+                                      },
+                                      child: Card(
+                                        elevation: 0,
+                                        child: Container(
+                                          padding: EdgeInsets.all(5),
+                                          height: h * .289,
+                                          width: w * .5,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(5),
+                                            color: Color(0xffFFFFFF),
+                                          ),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Stack(
+                                                children: [
+                                                  Container(
+                                                    height: h * .18,
+                                                    width: w * .45,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8),
+                                                      image: DecorationImage(
+                                                        image: NetworkImage(
+                                                            "${catagory[i].img}"),
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    top: h * .01,
+                                                    right: w * .02,
+                                                    child: CircleAvatar(
+                                                      radius: 15,
+                                                      backgroundColor:
+                                                          Colors.white,
+                                                      child: GestureDetector(
+                                                        onTap: () {
+                                                          if (!like.contains(
+                                                              catagory[i])) {
+                                                            like.add(
+                                                                catagory[i]);
 
-                                                      setState(() {
-                                                        liked = !liked;
-                                                      });
-                                                    }
-                                                  },
-                                                  child: (catagory[i] == true)
-                                                      ? Icon(
-                                                          Icons.favorite,
-                                                          color:
-                                                              Color(0xffFC2424),
-                                                        )
-                                                      : Icon(
-                                                          Icons.favorite_border,
-                                                          color:
-                                                              Color(0xffFC2424),
-                                                        ),
+                                                            setState(() {
+                                                              liked = !liked;
+                                                            });
+                                                          }
+                                                        },
+                                                        child: (catagory[i] ==
+                                                                true)
+                                                            ? Icon(
+                                                                Icons.favorite,
+                                                                color: Color(
+                                                                    0xffFC2424),
+                                                              )
+                                                            : Icon(
+                                                                Icons
+                                                                    .favorite_border,
+                                                                color: Color(
+                                                                    0xffFC2424),
+                                                              ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Container(
+                                                height: h * .04,
+                                                width: w,
+                                                alignment: Alignment.centerLeft,
+                                                child: Text(
+                                                  "${catagory[i].name}",
+                                                  style: Global.size12black,
                                                 ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                        Container(
-                                          height: h * .04,
-                                          width: w,
-                                          alignment: Alignment.centerLeft,
-                                          child: Text(
-                                            "${catagory[i].name}",
-                                            style: Global.size12black,
+                                              Text(
+                                                "Starting",
+                                                style: Global.size12jost,
+                                              ),
+                                              Text(
+                                                "₹ 25000",
+                                                style: Global.size15Montserrat,
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                        Text(
-                                          "Starting",
-                                          style: Global.size12jost,
-                                        ),
-                                        Text(
-                                          "₹ 25000",
-                                          style: Global.size15Montserrat,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }),
+                                      ),
+                                    );
+                                  }),
+                            ),
+                          ],
+                        ),
                       );
                     }
                     return Center(
