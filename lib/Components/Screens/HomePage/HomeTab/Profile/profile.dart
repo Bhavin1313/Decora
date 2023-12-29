@@ -24,10 +24,10 @@ class _ProfileState extends State<Profile> {
             children: [
               Container(
                 padding: EdgeInsets.only(
-                  top: 18,
+                  top: 28,
                   bottom: 10,
                 ),
-                height: h * .63,
+                height: h * .71,
                 width: w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
