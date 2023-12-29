@@ -2,6 +2,10 @@ import 'package:decora/Components/Screens/HomePage/HomeTab/Home/exclusivelisting
 import 'package:decora/Utils/list.dart';
 import 'package:flutter/material.dart';
 import '../../../../../Utils/global.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+
+import '../../../../Helpers/ApiHelper/api_helper.dart';
+import '../../../../Model/CategoryModel/catagorymodel.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -11,6 +15,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  Connectivity connectivity = Connectivity();
+
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -42,150 +48,350 @@ class _HomeState extends State<Home> {
         ),
       ),
       appBar: AppBar(),
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                height: h * .4,
-                width: w,
-                decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                width: w,
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          "Exclusive Listings",
-                          style: Global.size20,
-                        ),
-                        Spacer(),
-                        Text(
-                          "View More",
-                          style: Global.size13,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: MyWidgets.myrow(),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          "Events Category",
-                          style: Global.size20,
-                        ),
-                        Spacer(),
-                        Text(
-                          "View More",
-                          style: Global.size13,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Container(
-                      height: h,
-                      width: w,
-                      child: GridView.builder(
-                          shrinkWrap: true,
-                          itemCount: status.length,
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            mainAxisExtent: 270,
-                            crossAxisSpacing: 0,
-                          ),
-                          itemBuilder: (ctx, i) {
-                            return Card(
-                              elevation: 0,
-                              child: Container(
-                                padding: EdgeInsets.all(5),
-                                height: h * .289,
-                                width: w * .5,
+      body: StreamBuilder(
+        stream: connectivity.onConnectivityChanged,
+        builder: (
+          BuildContext context,
+          AsyncSnapshot<ConnectivityResult> snapshot,
+        ) {
+          return (snapshot.data == ConnectivityResult.mobile ||
+                  snapshot.data == ConnectivityResult.wifi)
+              ? FutureBuilder(
+                  future: Api_Helper.api.fetchCatagory(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Text("${snapshot.error}");
+                    } else if (snapshot.hasData) {
+                      List<Catagory_Model?> catagory =
+                          snapshot.data as List<Catagory_Model?>;
+                      return Container(
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Container(
+                                height: h * .4,
+                                width: w,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  color: Color(0xffFFFFFF),
+                                  color: Colors.grey,
+                                  borderRadius: BorderRadius.circular(10),
                                 ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                width: w,
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Stack(
+                                    Row(
                                       children: [
-                                        Container(
-                                          height: h * .18,
-                                          width: w * .45,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            image: DecorationImage(
-                                              image: AssetImage(
-                                                  "${status[i]['image']}"),
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
+                                        Text(
+                                          "Exclusive Listings",
+                                          style: Global.size20,
                                         ),
-                                        Positioned(
-                                          top: h * .01,
-                                          right: w * .02,
-                                          child: CircleAvatar(
-                                            radius: 15,
-                                            backgroundColor: Colors.white,
-                                            child: GestureDetector(
-                                              onTap: () {},
-                                              child: Icon(
-                                                Icons.favorite_border,
-                                                color: Color(0xffFC2424),
-                                              ),
-                                            ),
-                                          ),
+                                        Spacer(),
+                                        Text(
+                                          "View More",
+                                          style: Global.size13,
                                         ),
                                       ],
                                     ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: MyWidgets.myrow(),
+                                    ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "Events Category",
+                                          style: Global.size20,
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          "View More",
+                                          style: Global.size13,
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
                                     Container(
-                                      height: h * .04,
+                                      height: h,
                                       width: w,
-                                      alignment: Alignment.centerLeft,
-                                      child: Text(
-                                        "${status[i]['name']}",
-                                        style: Global.size12black,
-                                      ),
-                                    ),
-                                    Text(
-                                      "${status[i]['time']}",
-                                      style: Global.size12jost,
-                                    ),
-                                    Text(
-                                      "${status[i]['time']}",
-                                      style: Global.size15Montserrat,
+                                      child: GridView.builder(
+                                          shrinkWrap: true,
+                                          itemCount: catagory.length,
+                                          gridDelegate:
+                                              SliverGridDelegateWithFixedCrossAxisCount(
+                                            crossAxisCount: 2,
+                                            mainAxisExtent: 270,
+                                            crossAxisSpacing: 0,
+                                          ),
+                                          itemBuilder: (ctx, i) {
+                                            return Card(
+                                              elevation: 0,
+                                              child: Container(
+                                                padding: EdgeInsets.all(5),
+                                                height: h * .289,
+                                                width: w * .5,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
+                                                  color: Color(0xffFFFFFF),
+                                                ),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Stack(
+                                                      children: [
+                                                        Container(
+                                                          height: h * .18,
+                                                          width: w * .45,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8),
+                                                            image:
+                                                                DecorationImage(
+                                                              image:
+                                                                  NetworkImage(
+                                                                      ""),
+                                                              fit: BoxFit.cover,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Positioned(
+                                                          top: h * .01,
+                                                          right: w * .02,
+                                                          child: CircleAvatar(
+                                                            radius: 15,
+                                                            backgroundColor:
+                                                                Colors.white,
+                                                            child:
+                                                                GestureDetector(
+                                                              onTap: () {},
+                                                              child: Icon(
+                                                                Icons
+                                                                    .favorite_border,
+                                                                color: Color(
+                                                                    0xffFC2424),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Container(
+                                                      height: h * .04,
+                                                      width: w,
+                                                      alignment:
+                                                          Alignment.centerLeft,
+                                                      child: Text(
+                                                        "${status[i]['name']}",
+                                                        style:
+                                                            Global.size12black,
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      "${status[i]['time']}",
+                                                      style: Global.size12jost,
+                                                    ),
+                                                    Text(
+                                                      "${status[i]['time']}",
+                                                      style: Global
+                                                          .size15Montserrat,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          }),
                                     ),
                                   ],
                                 ),
                               ),
-                            );
-                          }),
+                            ],
+                          ),
+                        ),
+                      );
+                    }
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  },
+                )
+              : Center(
+                  child: Container(
+                    height: 450,
+                    width: 500,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image: AssetImage("lib/Assets/2.jpg"),
+                          fit: BoxFit.cover),
                     ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+                  ),
+                );
+        },
       ),
     );
   }
 }
+
+// Container(
+// child: SingleChildScrollView(
+// child: Column(
+// children: [
+// Container(
+// height: h * .4,
+// width: w,
+// decoration: BoxDecoration(
+// color: Colors.grey,
+// borderRadius: BorderRadius.circular(10),
+// ),
+// ),
+// Container(
+// padding: EdgeInsets.all(10),
+// width: w,
+// child: Column(
+// children: [
+// Row(
+// children: [
+// Text(
+// "Exclusive Listings",
+// style: Global.size20,
+// ),
+// Spacer(),
+// Text(
+// "View More",
+// style: Global.size13,
+// ),
+// ],
+// ),
+// SizedBox(
+// height: 5,
+// ),
+// SingleChildScrollView(
+// scrollDirection: Axis.horizontal,
+// child: MyWidgets.myrow(),
+// ),
+// SizedBox(
+// height: 5,
+// ),
+// Row(
+// children: [
+// Text(
+// "Events Category",
+// style: Global.size20,
+// ),
+// Spacer(),
+// Text(
+// "View More",
+// style: Global.size13,
+// ),
+// ],
+// ),
+// SizedBox(
+// height: 5,
+// ),
+// Container(
+// height: h,
+// width: w,
+// child: GridView.builder(
+// shrinkWrap: true,
+// itemCount: status.length,
+// gridDelegate:
+// SliverGridDelegateWithFixedCrossAxisCount(
+// crossAxisCount: 2,
+// mainAxisExtent: 270,
+// crossAxisSpacing: 0,
+// ),
+// itemBuilder: (ctx, i) {
+// return Card(
+// elevation: 0,
+// child: Container(
+// padding: EdgeInsets.all(5),
+// height: h * .289,
+// width: w * .5,
+// decoration: BoxDecoration(
+// borderRadius:
+// BorderRadius.circular(5),
+// color: Color(0xffFFFFFF),
+// ),
+// child: Column(
+// crossAxisAlignment:
+// CrossAxisAlignment.start,
+// children: [
+// Stack(
+// children: [
+// Container(
+// height: h * .18,
+// width: w * .45,
+// decoration: BoxDecoration(
+// borderRadius:
+// BorderRadius.circular(
+// 8),
+// image: DecorationImage(
+// image: AssetImage(
+// "${status[i]['image']}"),
+// fit: BoxFit.cover,
+// ),
+// ),
+// ),
+// Positioned(
+// top: h * .01,
+// right: w * .02,
+// child: CircleAvatar(
+// radius: 15,
+// backgroundColor:
+// Colors.white,
+// child: GestureDetector(
+// onTap: () {},
+// child: Icon(
+// Icons.favorite_border,
+// color:
+// Color(0xffFC2424),
+// ),
+// ),
+// ),
+// ),
+// ],
+// ),
+// Container(
+// height: h * .04,
+// width: w,
+// alignment: Alignment.centerLeft,
+// child: Text(
+// "${status[i]['name']}",
+// style: Global.size12black,
+// ),
+// ),
+// Text(
+// "${status[i]['time']}",
+// style: Global.size12jost,
+// ),
+// Text(
+// "${status[i]['time']}",
+// style: Global.size15Montserrat,
+// ),
+// ],
+// ),
+// ),
+// );
+// }),
+// ),
+// ],
+// ),
+// ),
+// ],
+// ),
+// ),
+// )
