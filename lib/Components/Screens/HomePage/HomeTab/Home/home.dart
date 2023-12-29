@@ -1,5 +1,3 @@
-import 'package:decora/Components/Screens/HomePage/HomeTab/Home/exclusivelisting.dart';
-import 'package:decora/Utils/list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../../Utils/global.dart';
@@ -27,30 +25,181 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Color(0xffF9F9F9),
       drawer: Container(
-        color: Color(0xffE4E4E4),
+        color: Color(0xffFFFFFF),
         child: Drawer(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 50,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.red,
-                radius: 90,
-                child: CircleAvatar(
-                  radius: 85,
-                  foregroundImage: AssetImage(
-                    "lib/Assets/download1.jpg",
+          child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 70,
+                ),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      foregroundImage: AssetImage(
+                        "lib/Assets/Raj.jpeg",
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Krutik Shah",
+                          style: Global.size17black,
+                        ),
+                        Text(
+                          "kshah1708@gmail.com",
+                          style: Global.size12,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.home_outlined,
+                      weight: 2,
+                      size: 40,
+                      color: Colors.black,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "Home",
+                      style: Global.size25,
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.calendar_month,
+                      weight: 2,
+                      size: 40,
+                      color: Colors.black,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "My Event",
+                      style: Global.size25,
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.payments,
+                      weight: 2,
+                      size: 40,
+                      color: Colors.black,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "Payment Info",
+                      style: Global.size25,
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.settings,
+                      weight: 2,
+                      size: 40,
+                      color: Colors.black,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "Settings",
+                      style: Global.size25,
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.support_agent,
+                      weight: 2,
+                      size: 40,
+                      color: Colors.black,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "Support",
+                      style: Global.size25,
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.offNamedUntil('/login', (route) => false);
+                  },
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.logout,
+                        weight: 2,
+                        size: 40,
+                        color: Colors.black,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Logout",
+                        style: Global.size25,
+                      )
+                    ],
                   ),
                 ),
-              ),
-              Text("NAME: John Doe"),
-              Text("EMAIL: JohnDoe@gmail.com"),
-            ],
+                SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
           ),
         ),
       ),
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Color(0xffF9F9F9),
+        title: Text(
+          "Hi, Krutik Shah!",
+          style: Global.size18black,
+        ),
+      ),
       body: StreamBuilder(
         stream: connectivity.onConnectivityChanged,
         builder: (
@@ -71,16 +220,24 @@ class _HomeState extends State<Home> {
                         child: Column(
                           children: [
                             Expanded(
-                              flex: 1,
+                              flex: 2,
                               child: Container(
-                                color: Colors.grey,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.grey,
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        "lib/Assets/833a34153d 1.png"),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
                             ),
                             SizedBox(
                               height: 20,
                             ),
                             Expanded(
-                              flex: 2,
+                              flex: 3,
                               child: GridView.builder(
                                   shrinkWrap: true,
                                   itemCount: catagory!.length,
@@ -206,8 +363,7 @@ class _HomeState extends State<Home> {
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                          image: AssetImage("lib/Assets/2.jpg"),
-                          fit: BoxFit.cover),
+                          image: AssetImage(""), fit: BoxFit.cover),
                     ),
                   ),
                 );
@@ -216,588 +372,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-// GridView.builder(
-//     scrollDirection: Axis.vertical,
-//     shrinkWrap: true,
-//     itemCount: catagory!.length,
-//     gridDelegate:
-//         SliverGridDelegateWithFixedCrossAxisCount(
-//       crossAxisCount: 2,
-//       mainAxisExtent: 270,
-//       crossAxisSpacing: 0,
-//     ),
-//     itemBuilder: (ctx, i) {
-//       return GestureDetector(
-//         onTap: () {},
-//         child: Card(
-//           elevation: 0,
-//           child: Container(
-//             padding: EdgeInsets.all(5),
-//             height: h * .289,
-//             width: w * .5,
-//             decoration: BoxDecoration(
-//               borderRadius:
-//                   BorderRadius.circular(5),
-//               color: Color(0xffFFFFFF),
-//             ),
-//             child: Column(
-//               crossAxisAlignment:
-//                   CrossAxisAlignment.start,
-//               children: [
-//                 Stack(
-//                   children: [
-//                     Container(
-//                       height: h * .18,
-//                       width: w * .45,
-//                       decoration:
-//                           BoxDecoration(
-//                         borderRadius:
-//                             BorderRadius
-//                                 .circular(
-//                                     8),
-//                         image:
-//                             DecorationImage(
-//                           image: NetworkImage(
-//                               "${catagory[i].themes[i]['img']}"),
-//                           fit: BoxFit.cover,
-//                         ),
-//                       ),
-//                     ),
-//                     Positioned(
-//                       top: h * .01,
-//                       right: w * .02,
-//                       child: CircleAvatar(
-//                         radius: 15,
-//                         backgroundColor:
-//                             Colors.white,
-//                         child:
-//                             GestureDetector(
-//                           onTap: () {},
-//                           child: Icon(
-//                             Icons
-//                                 .favorite_border,
-//                             color: Color(
-//                                 0xffFC2424),
-//                           ),
-//                         ),
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//                 Container(
-//                   height: h * .04,
-//                   width: w,
-//                   alignment:
-//                       Alignment.centerLeft,
-//                   child: Text(
-//                     "${catagory[i].themes[i]['name']}",
-//                     style:
-//                         Global.size12black,
-//                   ),
-//                 ),
-//                 Text(
-//                   "Starting",
-//                   style: Global.size12jost,
-//                 ),
-//                 Text(
-//                   "${catagory[i].themes[i]['price']}",
-//                   style: Global
-//                       .size15Montserrat,
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       );
-//     }),
-// Expanded(
-//   child: ListView.builder(
-//       scrollDirection: Axis.horizontal,
-//       itemCount: catagory!.length,
-//       itemBuilder: (ctx, i) {
-//         return Card(
-//           elevation: 0,
-//           child: Container(
-//             padding: EdgeInsets.all(5),
-//             height: h * .289,
-//             width: w * .4,
-//             decoration: BoxDecoration(
-//               borderRadius:
-//                   BorderRadius.circular(5),
-//               color: Color(0xffFFFFFF),
-//             ),
-//             child: Column(
-//               crossAxisAlignment:
-//                   CrossAxisAlignment.start,
-//               children: [
-//                 Stack(
-//                   children: [
-//                     Container(
-//                       height: h * .18,
-//                       width: w * .4,
-//                       decoration:
-//                           BoxDecoration(
-//                         borderRadius:
-//                             BorderRadius
-//                                 .circular(
-//                                     8),
-//                         image:
-//                             DecorationImage(
-//                           image: NetworkImage(
-//                               "${catagory[i].themes[i]['img']}"),
-//                           fit: BoxFit.cover,
-//                         ),
-//                       ),
-//                     ),
-//                     Positioned(
-//                       top: h * .01,
-//                       right: w * .02,
-//                       child: CircleAvatar(
-//                         radius: 15,
-//                         backgroundColor:
-//                             Colors.white,
-//                         child:
-//                             GestureDetector(
-//                           onTap: () {},
-//                           child: Icon(
-//                             Icons
-//                                 .favorite_border,
-//                             color: Color(
-//                                 0xffFC2424),
-//                           ),
-//                         ),
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//                 Container(
-//                   height: h * .04,
-//                   width: w,
-//                   alignment:
-//                       Alignment.centerLeft,
-//                   child: Text(
-//                     "${catagory[i].themes[i]['name']}",
-//                     style:
-//                         Global.size12black,
-//                   ),
-//                 ),
-//                 Text(
-//                   "Starting",
-//                   style: Global.size12jost,
-//                 ),
-//                 Text(
-//                   "${catagory[i].themes[i]['price']}",
-//                   style: Global
-//                       .size15Montserrat,
-//                 ),
-//               ],
-//             ),
-//           ),
-//         );
-//       }),
-// ),
-
-// Container(
-// child: SingleChildScrollView(
-// child: Column(
-// children: [
-// Container(
-// height: h * .4,
-// width: w,
-// decoration: BoxDecoration(
-// color: Colors.grey,
-// borderRadius: BorderRadius.circular(10),
-// ),
-// ),
-// Container(
-// padding: EdgeInsets.all(10),
-// width: w,
-// child: Column(
-// children: [
-// Row(
-// children: [
-// Text(
-// "Exclusive Listings",
-// style: Global.size20,
-// ),
-// Spacer(),
-// Text(
-// "View More",
-// style: Global.size13,
-// ),
-// ],
-// ),
-// SizedBox(
-// height: 5,
-// ),
-// SingleChildScrollView(
-// scrollDirection: Axis.horizontal,
-// child: MyWidgets.myrow(),
-// ),
-// SizedBox(
-// height: 5,
-// ),
-// Row(
-// children: [
-// Text(
-// "Events Category",
-// style: Global.size20,
-// ),
-// Spacer(),
-// Text(
-// "View More",
-// style: Global.size13,
-// ),
-// ],
-// ),
-// SizedBox(
-// height: 5,
-// ),
-// Container(
-// height: h,
-// width: w,
-// child: GridView.builder(
-// shrinkWrap: true,
-// itemCount: status.length,
-// gridDelegate:
-// SliverGridDelegateWithFixedCrossAxisCount(
-// crossAxisCount: 2,
-// mainAxisExtent: 270,
-// crossAxisSpacing: 0,
-// ),
-// itemBuilder: (ctx, i) {
-// return Card(
-// elevation: 0,
-// child: Container(
-// padding: EdgeInsets.all(5),
-// height: h * .289,
-// width: w * .5,
-// decoration: BoxDecoration(
-// borderRadius:
-// BorderRadius.circular(5),
-// color: Color(0xffFFFFFF),
-// ),
-// child: Column(
-// crossAxisAlignment:
-// CrossAxisAlignment.start,
-// children: [
-// Stack(
-// children: [
-// Container(
-// height: h * .18,
-// width: w * .45,
-// decoration: BoxDecoration(
-// borderRadius:
-// BorderRadius.circular(
-// 8),
-// image: DecorationImage(
-// image: AssetImage(
-// "${status[i]['image']}"),
-// fit: BoxFit.cover,
-// ),
-// ),
-// ),
-// Positioned(
-// top: h * .01,
-// right: w * .02,
-// child: CircleAvatar(
-// radius: 15,
-// backgroundColor:
-// Colors.white,
-// child: GestureDetector(
-// onTap: () {},
-// child: Icon(
-// Icons.favorite_border,
-// color:
-// Color(0xffFC2424),
-// ),
-// ),
-// ),
-// ),
-// ],
-// ),
-// Container(
-// height: h * .04,
-// width: w,
-// alignment: Alignment.centerLeft,
-// child: Text(
-// "${status[i]['name']}",
-// style: Global.size12black,
-// ),
-// ),
-// Text(
-// "${status[i]['time']}",
-// style: Global.size12jost,
-// ),
-// Text(
-// "${status[i]['time']}",
-// style: Global.size15Montserrat,
-// ),
-// ],
-// ),
-// ),
-// );
-// }),
-// ),
-// ],
-// ),
-// ),
-// ],
-// ),
-// ),
-// )
-
-// SingleChildScrollView(
-// child: Column(
-// children: [
-// Container(
-// height: h * .4,
-// width: w,
-// decoration: BoxDecoration(
-// color: Colors.grey,
-// borderRadius: BorderRadius.circular(10),
-// ),
-// ),
-// Padding(
-//   padding: const EdgeInsets.all(8.0),
-//   child: Row(
-//     children: [
-//       Text(
-//         "Exclusive Listings",
-//         style: Global.size20,
-//       ),
-//       Spacer(),
-//       Text(
-//         "View More",
-//         style: Global.size13,
-//       ),
-//     ],
-//   ),
-// ),
-// Padding(
-//   padding: const EdgeInsets.all(10),
-//   child: SingleChildScrollView(
-//     scrollDirection: Axis.horizontal,
-//     child: Row(
-//       children: [
-//         ...status
-//             .map(
-//               (e) => Card(
-//                 elevation: 0,
-//                 child: Container(
-//                   padding: EdgeInsets.all(5),
-//                   height: h * .289,
-//                   width: w * .4,
-//                   decoration: BoxDecoration(
-//                     borderRadius:
-//                         BorderRadius.circular(5),
-//                     color: Color(0xffFFFFFF),
-//                   ),
-//                   child: Column(
-//                     crossAxisAlignment:
-//                         CrossAxisAlignment.start,
-//                     children: [
-//                       Stack(
-//                         children: [
-//                           Container(
-//                             height: h * .18,
-//                             width: w * .4,
-//                             decoration:
-//                                 BoxDecoration(
-//                               borderRadius:
-//                                   BorderRadius
-//                                       .circular(8),
-//                               image:
-//                                   DecorationImage(
-//                                 image: AssetImage(
-//                                     "${e['image']}"),
-//                                 fit: BoxFit.cover,
-//                               ),
-//                             ),
-//                           ),
-//                           Positioned(
-//                             top: h * .01,
-//                             right: w * .02,
-//                             child: CircleAvatar(
-//                               radius: 15,
-//                               backgroundColor:
-//                                   Colors.white,
-//                               child:
-//                                   GestureDetector(
-//                                 onTap: () {},
-//                                 child: Icon(
-//                                   Icons
-//                                       .favorite_border,
-//                                   color: Color(
-//                                       0xffFC2424),
-//                                 ),
-//                               ),
-//                             ),
-//                           ),
-//                         ],
-//                       ),
-//                       Container(
-//                         height: h * .04,
-//                         width: w,
-//                         alignment:
-//                             Alignment.centerLeft,
-//                         child: Text(
-//                           "${e['name']}",
-//                           style: Global.size12black,
-//                         ),
-//                       ),
-//                       Text(
-//                         "${e['time']}",
-//                         style: Global.size12jost,
-//                       ),
-//                       Text(
-//                         "${e['time']}",
-//                         style:
-//                             Global.size15Montserrat,
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               ),
-//             )
-//             .toList(),
-//       ],
-//     ),
-//   ),
-// ),
-// Padding(
-// padding: const EdgeInsets.all(10),
-// child: Row(
-// children: [
-// Text(
-// "Events Category",
-// style: Global.size20,
-// ),
-// Spacer(),
-// Text(
-// "View More",
-// style: Global.size13,
-// ),
-// ],
-// ),
-// ),
-// Padding(
-// padding: const EdgeInsets.all(10),
-// child: SingleChildScrollView(
-// scrollDirection: Axis.vertical,
-// child: GridView.builder(
-// shrinkWrap: true,
-// itemCount: catagory!.length,
-// gridDelegate:
-// SliverGridDelegateWithFixedCrossAxisCount(
-// crossAxisCount: 2,
-// mainAxisExtent: 230,
-// crossAxisSpacing: 0,
-// ),
-// itemBuilder: (ctx, i) {
-// return GestureDetector(
-// onTap: () {
-// Get.toNamed(
-// 'catd',
-// arguments: catagory![i],
-// );
-// },
-// child: Card(
-// elevation: 0,
-// child: Container(
-// padding: EdgeInsets.all(5),
-// height: h * .289,
-// width: w * .5,
-// decoration: BoxDecoration(
-// borderRadius:
-// BorderRadius.circular(5),
-// color: Color(0xffFFFFFF),
-// ),
-// child: Column(
-// crossAxisAlignment:
-// CrossAxisAlignment.start,
-// children: [
-// Stack(
-// children: [
-// Container(
-// height: h * .18,
-// width: w * .45,
-// decoration: BoxDecoration(
-// borderRadius:
-// BorderRadius
-//     .circular(8),
-// image: DecorationImage(
-// image: NetworkImage(
-// "${catagory[i].img}"),
-// fit: BoxFit.cover,
-// ),
-// ),
-// ),
-// Positioned(
-// top: h * .01,
-// right: w * .02,
-// child: CircleAvatar(
-// radius: 15,
-// backgroundColor:
-// Colors.white,
-// child: GestureDetector(
-// onTap: () {
-// if (!like.contains(
-// catagory[i])) {
-// like.add(
-// catagory[i]);
-//
-// setState(() {
-// liked = !liked;
-// });
-// }
-// },
-// child: (liked)
-// ? Icon(
-// Icons
-//     .favorite,
-// color: Color(
-// 0xffFC2424),
-// )
-//     : Icon(
-// Icons
-//     .favorite_border,
-// color: Color(
-// 0xffFC2424),
-// ),
-// ),
-// ),
-// ),
-// ],
-// ),
-// Container(
-// height: h * .04,
-// width: w,
-// alignment:
-// Alignment.centerLeft,
-// child: Text(
-// "${catagory[i].name}",
-// style: Global.size12black,
-// ),
-// ),
-// Text(
-// "Starting",
-// style: Global.size12jost,
-// ),
-// Text(
-// "₹ 25000",
-// style:
-// Global.size15Montserrat,
-// ),
-// ],
-// ),
-// ),
-// ),
-// );
-// }),
-// ),
-// ),
-// ],
-// ),
-// );

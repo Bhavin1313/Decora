@@ -25,7 +25,9 @@ class _UserDetailsState extends State<UserDetails> {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         toolbarHeight: 30,
         leading: IconButton(
           onPressed: () {

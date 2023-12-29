@@ -3,10 +3,11 @@ import 'package:decora/Components/Screens/Confirmation/confirmation.dart';
 import 'package:decora/Components/Screens/ForgetPassword/successfully.dart';
 import 'package:decora/Components/Screens/HomePage/homepage.dart';
 import 'package:decora/Components/Screens/Login/Views/login_screen.dart';
-import 'package:decora/Components/Screens/One_Time_Intro/one_time_intro.dart';
 import 'package:decora/Components/Screens/One_Time_Intro/screen1.dart';
 import 'package:decora/Components/Screens/One_Time_Intro/screen2.dart';
 import 'package:decora/Components/Screens/One_Time_Intro/screen3.dart';
+import 'package:decora/Components/Screens/Payment/payment.dart';
+import 'package:decora/Components/Screens/Payment/paymentsuccess.dart';
 import 'package:decora/Components/Screens/SignUpPage/Views/addressdetail.dart';
 import 'package:decora/Components/Screens/SignUpPage/Views/gender.dart';
 import 'package:decora/Components/Screens/SignUpPage/Views/number.dart';
@@ -47,10 +48,6 @@ void main() async {
           GetPage(
             name: '/splash',
             page: () => SplashScreen(),
-          ),
-          GetPage(
-            name: '/one',
-            page: () => OneTimeIntro(),
           ),
           GetPage(
             name: '/login',
@@ -123,6 +120,14 @@ void main() async {
           GetPage(
             name: '/confirmation',
             page: () => Confirmation(),
+          ),
+          GetPage(
+            name: '/payment',
+            page: () => Payment(),
+          ),
+          GetPage(
+            name: '/paymentsuccess',
+            page: () => PaySuccssess(),
           ),
         ],
       ),

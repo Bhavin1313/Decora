@@ -23,6 +23,13 @@ class Global {
     color: Color(0xff000000),
   );
 
+  static TextStyle size18black = GoogleFonts.getFont(
+    'Montserrat',
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: Color(0xff4A4A4A),
+  );
+
   static TextStyle size16black = GoogleFonts.getFont(
     'Montserrat',
     fontSize: 16,

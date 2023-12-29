@@ -74,7 +74,9 @@ class _ThemeDetailState extends State<ThemeDetail> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(22),
                   image: DecorationImage(
-                      image: NetworkImage("${data['img']}"), fit: BoxFit.cover),
+                    image: NetworkImage("${data['img']}"),
+                    fit: BoxFit.cover,
+                  ),
                   color: Colors.grey,
                 ),
               ),

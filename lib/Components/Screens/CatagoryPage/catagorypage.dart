@@ -46,82 +46,85 @@ class _CatDatailState extends State<CatDatail> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(18),
-        child: Column(
-          children: [
-            Container(
-              height: h * .3,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(22),
-                image: DecorationImage(
-                  image: NetworkImage("${data?.img}"),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                height: h * .3,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22),
+                  image: DecorationImage(
+                    image: NetworkImage("${data?.img}"),
+                    fit: BoxFit.cover,
+                  ),
+                  color: Colors.grey,
                 ),
-                color: Colors.grey,
               ),
-            ),
-            SizedBox(
-              height: h * .05,
-            ),
-            ...?data?.themes
-                .map(
-                  (e) => GestureDetector(
-                    onTap: () {
-                      Get.toNamed('theme', arguments: e);
-                    },
-                    child: Row(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(top: 5),
-                          height: h * .12,
-                          width: w * .25,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
-                              image: NetworkImage("${e['img']}"),
-                              fit: BoxFit.cover,
+              SizedBox(
+                height: h * .05,
+              ),
+              ...?data?.themes
+                  .map(
+                    (e) => GestureDetector(
+                      onTap: () {
+                        Get.toNamed('theme', arguments: e);
+                      },
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(top: 5),
+                            height: h * .12,
+                            width: w * .25,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              image: DecorationImage(
+                                image: NetworkImage("${e['img']}"),
+                                fit: BoxFit.cover,
+                              ),
+                              color: Colors.white,
                             ),
-                            color: Colors.white,
                           ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "${e['name']}",
-                              style: Global.size16black,
-                            ),
-                            Text(
-                              "₹ ${e['price']}",
-                              style: Global.size14black,
-                            ),
-                          ],
-                        ),
-                        Spacer(),
-                        Card(
-                          elevation: 5,
-                          child: CircleAvatar(
-                            radius: 15,
-                            backgroundColor: Colors.white,
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: Icon(
-                                Icons.favorite_border,
-                                color: Color(0xffFC2424),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "${e['name']}",
+                                style: Global.size16black,
+                              ),
+                              Text(
+                                "₹ ${e['price']}",
+                                style: Global.size14black,
+                              ),
+                            ],
+                          ),
+                          Spacer(),
+                          Card(
+                            elevation: 5,
+                            child: CircleAvatar(
+                              radius: 15,
+                              backgroundColor: Colors.white,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: Icon(
+                                  Icons.favorite_border,
+                                  color: Color(0xffFC2424),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                )
-                .toList(),
-            SizedBox(
-              height: 10,
-            ),
-          ],
+                  )
+                  .toList(),
+              SizedBox(
+                height: 10,
+              ),
+            ],
+          ),
         ),
       ),
     );

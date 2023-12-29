@@ -18,7 +18,9 @@ class _NumberState extends State<Number> {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         toolbarHeight: 30,
         leading: IconButton(
           onPressed: () {
@@ -37,7 +39,13 @@ class _NumberState extends State<Number> {
             Container(
               height: h * .4,
               width: w,
-              color: Colors.grey,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("lib/Assets/number.png"),
+                  fit: BoxFit.cover,
+                ),
+                color: Colors.grey,
+              ),
             ),
             SizedBox(
               height: h * .018,

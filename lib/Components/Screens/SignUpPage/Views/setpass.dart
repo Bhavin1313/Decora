@@ -166,13 +166,18 @@ class _SetPassworldState extends State<SetPassworld> {
                   ],
                 ),
               ),
-              Container(
-                height: h * .1878,
-                width: w,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("lib/Assets/image 2.png"),
-                    fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed('/otp');
+                },
+                child: Container(
+                  height: h * .1878,
+                  width: w,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("lib/Assets/image 2.png"),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),

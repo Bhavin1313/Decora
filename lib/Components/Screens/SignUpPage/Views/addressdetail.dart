@@ -22,7 +22,9 @@ class _AddressState extends State<Address> {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         toolbarHeight: 30,
         leading: IconButton(
           onPressed: () {
@@ -45,7 +47,13 @@ class _AddressState extends State<Address> {
                 Container(
                   height: h * .4,
                   width: w,
-                  color: Colors.grey,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("lib/Assets/email.png"),
+                      fit: BoxFit.cover,
+                    ),
+                    color: Colors.grey,
+                  ),
                 ),
                 SizedBox(
                   height: h * .018,

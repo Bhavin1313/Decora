@@ -16,7 +16,9 @@ class _GenderState extends State<Gender> {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         toolbarHeight: 30,
         leading: IconButton(
           onPressed: () {
@@ -65,7 +67,13 @@ class _GenderState extends State<Gender> {
                     Container(
                       height: h * .2,
                       width: w * .4,
-                      color: Colors.grey,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("lib/Assets/male.png"),
+                          fit: BoxFit.cover,
+                        ),
+                        color: Colors.grey,
+                      ),
                     ),
                     Text(
                       "Male",
@@ -86,7 +94,13 @@ class _GenderState extends State<Gender> {
                     Container(
                       height: h * .2,
                       width: w * .4,
-                      color: Colors.grey,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("lib/Assets/female.png"),
+                          fit: BoxFit.cover,
+                        ),
+                        color: Colors.grey,
+                      ),
                     ),
                     Text(
                       "Female",

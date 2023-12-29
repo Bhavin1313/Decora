@@ -1,32 +1,30 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../Utils/global.dart';
 
-class Successfully extends StatefulWidget {
-  const Successfully({super.key});
+class PaySuccssess extends StatefulWidget {
+  const PaySuccssess({super.key});
 
   @override
-  State<Successfully> createState() => _SuccessfullyState();
+  State<PaySuccssess> createState() => _PaySuccssessState();
 }
 
-class _SuccessfullyState extends State<Successfully> {
+class _PaySuccssessState extends State<PaySuccssess> {
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
+
+    Timer(
+      const Duration(seconds: 2),
+      () {
+        Get.offNamedUntil('/home', (routes) => false);
+      },
+    );
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 30,
-        leading: IconButton(
-          onPressed: () {
-            Get.offNamedUntil('/login', (routes) => false);
-          },
-          icon: Icon(
-            Icons.arrow_back,
-          ),
-        ),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -63,12 +61,8 @@ class _SuccessfullyState extends State<Successfully> {
               height: h * .01,
             ),
             Text(
-              "Your password has",
-              style: Global.size15,
-            ),
-            Text(
-              "successfully updated",
-              style: Global.size15,
+              "Your Payment is Successful",
+              style: Global.size25C,
             ),
           ],
         ),

@@ -17,7 +17,9 @@ class _OtpPageState extends State<OtpPage> {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         toolbarHeight: 30,
         leading: IconButton(
           onPressed: () {
@@ -144,7 +146,7 @@ class _OtpPageState extends State<OtpPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Get.toNamed('/setpass');
+                        Get.toNamed('/home');
                       },
                       child: Container(
                         height: h * .07,
