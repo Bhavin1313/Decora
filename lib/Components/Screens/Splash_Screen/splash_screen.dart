@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     Timer(
-      const Duration(seconds: 4),
+      const Duration(seconds: 2),
       () {
         Get.offNamedUntil('/login', (routes) => false);
       },

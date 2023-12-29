@@ -1,3 +1,5 @@
+import 'package:decora/Components/Screens/CatagoryPage/catagorypage.dart';
+import 'package:decora/Components/Screens/Confirmation/confirmation.dart';
 import 'package:decora/Components/Screens/ForgetPassword/successfully.dart';
 import 'package:decora/Components/Screens/HomePage/homepage.dart';
 import 'package:decora/Components/Screens/Login/Views/login_screen.dart';
@@ -10,6 +12,7 @@ import 'package:decora/Components/Screens/SignUpPage/Views/gender.dart';
 import 'package:decora/Components/Screens/SignUpPage/Views/number.dart';
 import 'package:decora/Components/Screens/SignUpPage/Views/otppage.dart';
 import 'package:decora/Components/Screens/Splash_Screen/splash_screen.dart';
+import 'package:decora/Components/Screens/ThemeDetail/themedetail.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -108,6 +111,18 @@ void main() async {
           GetPage(
             name: '/home',
             page: () => HomePage(),
+          ),
+          GetPage(
+            name: '/catd',
+            page: () => CatDatail(),
+          ),
+          GetPage(
+            name: '/theme',
+            page: () => ThemeDetail(),
+          ),
+          GetPage(
+            name: '/confirmation',
+            page: () => Confirmation(),
           ),
         ],
       ),

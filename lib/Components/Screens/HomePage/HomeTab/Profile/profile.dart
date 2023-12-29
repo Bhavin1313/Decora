@@ -1,8 +1,10 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:decora/Components/Screens/HomePage/HomeTab/Home/exclusivelisting.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../Utils/global.dart';
+import '../../../ThemeDetail/list1.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -18,6 +20,47 @@ class _ProfileState extends State<Profile> {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xffEFC776),
+        centerTitle: true,
+        actions: [
+          Container(
+            margin: EdgeInsets.all(10),
+            height: 50,
+            width: 38,
+            decoration: BoxDecoration(
+              color: Color(0xffE3E3E3),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: GestureDetector(
+              child: Icon(
+                Icons.notifications_outlined,
+                color: Color(0xff6E6E6E),
+              ),
+            ),
+          ),
+        ],
+        leading: Container(
+          margin: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: Color(0xffE3E3E3),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              Icons.arrow_back,
+              color: Color(0xff6E6E6E),
+            ),
+          ),
+        ),
+        title: Text(
+          "Profile",
+          style: Global.size23,
+        ),
+      ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -27,7 +70,7 @@ class _ProfileState extends State<Profile> {
                   top: 28,
                   bottom: 10,
                 ),
-                height: h * .71,
+                height: h * .3,
                 width: w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -38,51 +81,6 @@ class _ProfileState extends State<Profile> {
                 ),
                 child: Column(
                   children: [
-                    Container(
-                      height: 40,
-                      padding: EdgeInsets.only(
-                        left: 18,
-                        right: 18,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            height: 35,
-                            width: 35,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(4),
-                              color: Colors.white,
-                            ),
-                            child: Icon(
-                              Icons.arrow_back_outlined,
-                              color: Color(0xff6E6E6E),
-                              size: 20,
-                            ),
-                          ),
-                          Text(
-                            "Profile",
-                            style: Global.size22,
-                          ),
-                          Container(
-                            height: 35,
-                            width: 35,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(4),
-                              color: Colors.white,
-                            ),
-                            child: Icon(
-                              Icons.notifications_outlined,
-                              color: Color(0xff6E6E6E),
-                              size: 20,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: h * .03,
-                    ),
                     CircleAvatar(
                       radius: 50,
                     ),
@@ -93,42 +91,15 @@ class _ProfileState extends State<Profile> {
                       "Krutik Shah",
                       style: Global.size22white,
                     ),
+                    SizedBox(
+                      height: h * .015,
+                    ),
                     Text(
                       "kshah1708@gmail.com",
                       style: Global.size15white,
                     ),
                     SizedBox(
                       height: h * .007,
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 18,
-                        ),
-                        Text(
-                          "My Listings",
-                          style: Global.size22white,
-                        ),
-                        Spacer(),
-                        Text(
-                          "",
-                          style: Global.size22white,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: h * .008,
-                    ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 11,
-                          ),
-                          MyWidgets.myrow(),
-                        ],
-                      ),
                     ),
                   ],
                 ),
@@ -696,3 +667,100 @@ class _ProfileState extends State<Profile> {
 //     );
 //   }
 // }
+
+//
+// Row(
+// children: [
+// SizedBox(
+// width: 18,
+// ),
+// Text(
+// "My Listings",
+// style: Global.size22white,
+// ),
+// Spacer(),
+// Text(
+// "",
+// style: Global.size22white,
+// ),
+// ],
+// ),
+// SizedBox(
+// height: h * .008,
+// ),
+// SingleChildScrollView(
+// scrollDirection: Axis.horizontal,
+// child: Row(
+// mainAxisAlignment: MainAxisAlignment.start,
+// children: [
+// SizedBox(
+// width: 11,
+// ),
+// ...addtheme
+//     .map(
+// (e) => Card(
+// elevation: 0,
+// child: Container(
+// padding: EdgeInsets.all(5),
+// height: h * .289,
+// width: w * .4,
+// decoration: BoxDecoration(
+// borderRadius: BorderRadius.circular(5),
+// color: Color(0xffFFFFFF),
+// ),
+// child: Column(
+// crossAxisAlignment:
+// CrossAxisAlignment.start,
+// children: [
+// Container(
+// height: h * .18,
+// width: w * .4,
+// decoration: BoxDecoration(
+// borderRadius:
+// BorderRadius.circular(8),
+// image: DecorationImage(
+// image: AssetImage("${e['img']}"),
+// fit: BoxFit.cover,
+// ),
+// ),
+// ),
+// Container(
+// height: h * .04,
+// width: w,
+// alignment: Alignment.centerLeft,
+// child: Text(
+// "${e['name']}",
+// style: Global.size12black,
+// ),
+// ),
+// Row(
+// children: [
+// Text(
+// "₹ ${e['price']}",
+// style: Global.size15Montserrat,
+// ),
+// Spacer(),
+// Card(
+// child: CircleAvatar(
+// radius: 15,
+// backgroundColor: Colors.white,
+// child: GestureDetector(
+// onTap: () {},
+// child: Icon(
+// Icons.favorite_border,
+// color: Color(0xffFC2424),
+// ),
+// ),
+// ),
+// ),
+// ],
+// ),
+// ],
+// ),
+// ),
+// ),
+// )
+//     .toList(),
+// ],
+// ),
+// ),
