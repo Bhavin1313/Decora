@@ -8,14 +8,15 @@ class Api_Helper {
 
   static Api_Helper api = Api_Helper._();
 
-  Future<Catagory_Model?> fetchCatagory() async {
+  Future<List<Catagory_Model>?> fetchCatagory() async {
     String api =
         "https://decoraevnt.online/api/category?providedPassword=Decora957438";
     http.Response response = await http.get(Uri.parse(api));
     if (response.statusCode == 200) {
       var body = response.body;
-      Map<String, dynamic> decodedata = jsonDecode(body);
-      Catagory_Model data = Catagory_Model.fromJSON(data: decodedata);
+      List decodedata = jsonDecode(body);
+      List<Catagory_Model> data =
+          decodedata.map((e) => Catagory_Model.fromJSON(data: e)).toList();
 
       return data;
     } else {
