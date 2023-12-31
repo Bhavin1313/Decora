@@ -49,11 +49,11 @@ class _HomeState extends State<Home> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Krutik Shah",
+                          "Raj Koladiya",
                           style: Global.size17black,
                         ),
                         Text(
-                          "kshah1708@gmail.com",
+                          "rajKoladiya@gmail.com",
                           style: Global.size12,
                         ),
                       ],
@@ -67,8 +67,7 @@ class _HomeState extends State<Home> {
                   children: [
                     Icon(
                       Icons.home_outlined,
-                      weight: 2,
-                      size: 40,
+                      size: 30,
                       color: Colors.black,
                     ),
                     SizedBox(
@@ -76,7 +75,7 @@ class _HomeState extends State<Home> {
                     ),
                     Text(
                       "Home",
-                      style: Global.size25,
+                      style: Global.size17black,
                     )
                   ],
                 ),
@@ -87,8 +86,7 @@ class _HomeState extends State<Home> {
                   children: [
                     Icon(
                       Icons.calendar_month,
-                      weight: 2,
-                      size: 40,
+                      size: 30,
                       color: Colors.black,
                     ),
                     SizedBox(
@@ -96,7 +94,7 @@ class _HomeState extends State<Home> {
                     ),
                     Text(
                       "My Event",
-                      style: Global.size25,
+                      style: Global.size17black,
                     )
                   ],
                 ),
@@ -107,8 +105,7 @@ class _HomeState extends State<Home> {
                   children: [
                     Icon(
                       Icons.payments,
-                      weight: 2,
-                      size: 40,
+                      size: 30,
                       color: Colors.black,
                     ),
                     SizedBox(
@@ -116,7 +113,7 @@ class _HomeState extends State<Home> {
                     ),
                     Text(
                       "Payment Info",
-                      style: Global.size25,
+                      style: Global.size17black,
                     )
                   ],
                 ),
@@ -127,8 +124,7 @@ class _HomeState extends State<Home> {
                   children: [
                     Icon(
                       Icons.settings,
-                      weight: 2,
-                      size: 40,
+                      size: 30,
                       color: Colors.black,
                     ),
                     SizedBox(
@@ -136,7 +132,7 @@ class _HomeState extends State<Home> {
                     ),
                     Text(
                       "Settings",
-                      style: Global.size25,
+                      style: Global.size17black,
                     )
                   ],
                 ),
@@ -147,8 +143,7 @@ class _HomeState extends State<Home> {
                   children: [
                     Icon(
                       Icons.support_agent,
-                      weight: 2,
-                      size: 40,
+                      size: 30,
                       color: Colors.black,
                     ),
                     SizedBox(
@@ -156,7 +151,7 @@ class _HomeState extends State<Home> {
                     ),
                     Text(
                       "Support",
-                      style: Global.size25,
+                      style: Global.size17black,
                     )
                   ],
                 ),
@@ -171,8 +166,7 @@ class _HomeState extends State<Home> {
                     children: [
                       Icon(
                         Icons.logout,
-                        weight: 2,
-                        size: 40,
+                        size: 30,
                         color: Colors.black,
                       ),
                       SizedBox(
@@ -180,7 +174,7 @@ class _HomeState extends State<Home> {
                       ),
                       Text(
                         "Logout",
-                        style: Global.size25,
+                        style: Global.size17black,
                       )
                     ],
                   ),
@@ -196,7 +190,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         backgroundColor: Color(0xffF9F9F9),
         title: Text(
-          "Hi, Krutik Shah!",
+          "Hi, Raj Koladiya!",
           style: Global.size18black,
         ),
       ),
@@ -337,7 +331,7 @@ class _HomeState extends State<Home> {
                                                 style: Global.size12jost,
                                               ),
                                               Text(
-                                                "₹ 25000",
+                                                "₹ ${catagory[i].minPrice}",
                                                 style: Global.size15Montserrat,
                                               ),
                                             ],

@@ -60,246 +60,251 @@ class _ProfileState extends State<Profile> {
         ),
       ),
       body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.only(
-                  top: 28,
-                  bottom: 10,
-                ),
-                height: h * .3,
-                width: w,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(8),
-                    bottomLeft: Radius.circular(8),
+        child: Container(
+          width: w * .95,
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(
+                      top: 28,
+                      bottom: 10,
+                    ),
+                    height: h * .3,
+                    width: w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(8),
+                        bottomLeft: Radius.circular(8),
+                      ),
+                      color: Color(0xffEFC776),
+                    ),
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 50,
+                          backgroundImage: AssetImage(
+                            "lib/Assets/Raj.jpeg",
+                          ),
+                        ),
+                        SizedBox(
+                          height: h * .015,
+                        ),
+                        Text(
+                          "Raj Koladiya",
+                          style: Global.size22white,
+                        ),
+                        SizedBox(
+                          height: h * .015,
+                        ),
+                        Text(
+                          "rajKoladiya@gmail.com",
+                          style: Global.size15white,
+                        ),
+                        SizedBox(
+                          height: h * .007,
+                        ),
+                      ],
+                    ),
                   ),
-                  color: Color(0xffEFC776),
-                ),
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage(
-                        "lib/Assets/Raj.jpeg",
-                      ),
+                  Container(
+                    padding: EdgeInsets.all(18),
+                    height: h * .55,
+                    width: w,
+                    decoration: BoxDecoration(
+                      color: Color(0xffF9F9F9),
                     ),
-                    SizedBox(
-                      height: h * .015,
-                    ),
-                    Text(
-                      "Krutik Shah",
-                      style: Global.size22white,
-                    ),
-                    SizedBox(
-                      height: h * .015,
-                    ),
-                    Text(
-                      "kshah1708@gmail.com",
-                      style: Global.size15white,
-                    ),
-                    SizedBox(
-                      height: h * .007,
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(18),
-                height: h * .55,
-                width: w,
-                decoration: BoxDecoration(
-                  color: Color(0xffF9F9F9),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      height: h * .07,
-                      width: w,
-                      decoration: BoxDecoration(
-                        color: Color(0xffFFFFFF),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.request_page,
-                            color: Color(0xff6B6B6B),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          height: h * .07,
+                          width: w,
+                          decoration: BoxDecoration(
+                            color: Color(0xffFFFFFF),
+                            borderRadius: BorderRadius.circular(8),
                           ),
-                          SizedBox(
-                            width: 10,
+                          alignment: Alignment.center,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.request_page,
+                                color: Color(0xff6B6B6B),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "My Request",
+                                style: Global.size17black,
+                              ),
+                              Spacer(),
+                              Icon(
+                                Icons.arrow_forward_ios_sharp,
+                                color: Color(0xff6B6B6B),
+                                size: 17,
+                                weight: 6,
+                              ),
+                            ],
                           ),
-                          Text(
-                            "My Request",
-                            style: Global.size17black,
-                          ),
-                          Spacer(),
-                          Icon(
-                            Icons.arrow_forward_ios_sharp,
-                            color: Color(0xff6B6B6B),
-                            size: 17,
-                            weight: 6,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      height: h * .07,
-                      width: w,
-                      decoration: BoxDecoration(
-                        color: Color(0xffFFFFFF),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.event_note,
-                            color: Color(0xff6B6B6B),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "My Event Details",
-                            style: Global.size17black,
-                          ),
-                          Spacer(),
-                          Icon(
-                            Icons.arrow_forward_ios_sharp,
-                            color: Color(0xff6B6B6B),
-                            size: 17,
-                            weight: 6,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      height: h * .07,
-                      width: w,
-                      decoration: BoxDecoration(
-                        color: Color(0xffFFFFFF),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.settings,
-                            color: Color(0xff6B6B6B),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "Setting",
-                            style: Global.size17black,
-                          ),
-                          Spacer(),
-                          Icon(
-                            Icons.arrow_forward_ios_sharp,
-                            color: Color(0xff6B6B6B),
-                            size: 17,
-                            weight: 6,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      height: h * .07,
-                      width: w,
-                      decoration: BoxDecoration(
-                        color: Color(0xffFFFFFF),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.message,
-                            color: Color(0xff6B6B6B),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "My Messages",
-                            style: Global.size17black,
-                          ),
-                          Spacer(),
-                          Icon(
-                            Icons.arrow_forward_ios_sharp,
-                            color: Color(0xff6B6B6B),
-                            size: 17,
-                            weight: 6,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      height: h * .07,
-                      width: w,
-                      decoration: BoxDecoration(
-                        color: Color(0xffFFFFFF),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.currency_rupee,
-                            color: Color(0xff6B6B6B),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "Payment Details",
-                            style: Global.size17black,
-                          ),
-                          Spacer(),
-                          Icon(
-                            Icons.arrow_forward_ios_sharp,
-                            color: Color(0xff6B6B6B),
-                            size: 17,
-                            weight: 6,
-                          ),
-                        ],
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Get.offNamedUntil('/login', (route) => false);
-                      },
-                      child: Container(
-                        height: h * .07,
-                        width: w,
-                        decoration: BoxDecoration(
-                          color: Color(0xffEFC776),
-                          borderRadius: BorderRadius.circular(8),
                         ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          "Log Out",
-                          style: Global.size20white,
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          height: h * .07,
+                          width: w,
+                          decoration: BoxDecoration(
+                            color: Color(0xffFFFFFF),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          alignment: Alignment.center,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.event_note,
+                                color: Color(0xff6B6B6B),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "My Event Details",
+                                style: Global.size17black,
+                              ),
+                              Spacer(),
+                              Icon(
+                                Icons.arrow_forward_ios_sharp,
+                                color: Color(0xff6B6B6B),
+                                size: 17,
+                                weight: 6,
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          height: h * .07,
+                          width: w,
+                          decoration: BoxDecoration(
+                            color: Color(0xffFFFFFF),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          alignment: Alignment.center,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.settings,
+                                color: Color(0xff6B6B6B),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Setting",
+                                style: Global.size17black,
+                              ),
+                              Spacer(),
+                              Icon(
+                                Icons.arrow_forward_ios_sharp,
+                                color: Color(0xff6B6B6B),
+                                size: 17,
+                                weight: 6,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          height: h * .07,
+                          width: w,
+                          decoration: BoxDecoration(
+                            color: Color(0xffFFFFFF),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          alignment: Alignment.center,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.message,
+                                color: Color(0xff6B6B6B),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "My Messages",
+                                style: Global.size17black,
+                              ),
+                              Spacer(),
+                              Icon(
+                                Icons.arrow_forward_ios_sharp,
+                                color: Color(0xff6B6B6B),
+                                size: 17,
+                                weight: 6,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          height: h * .07,
+                          width: w,
+                          decoration: BoxDecoration(
+                            color: Color(0xffFFFFFF),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          alignment: Alignment.center,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.currency_rupee,
+                                color: Color(0xff6B6B6B),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Payment Details",
+                                style: Global.size17black,
+                              ),
+                              Spacer(),
+                              Icon(
+                                Icons.arrow_forward_ios_sharp,
+                                color: Color(0xff6B6B6B),
+                                size: 17,
+                                weight: 6,
+                              ),
+                            ],
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Get.offNamedUntil('/login', (route) => false);
+                          },
+                          child: Container(
+                            height: h * .07,
+                            width: w,
+                            decoration: BoxDecoration(
+                              color: Color(0xffEFC776),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Log Out",
+                              style: Global.size20white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

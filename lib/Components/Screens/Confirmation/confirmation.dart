@@ -12,10 +12,18 @@ class Confirmation extends StatefulWidget {
 
 class _ConfirmationState extends State<Confirmation> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  String? email;
-  String? pass;
-  TextEditingController email_c = TextEditingController();
-  TextEditingController pass_c = TextEditingController();
+  String? name;
+  String? city;
+  String? location;
+  String? date;
+  String? time;
+  String? duration;
+  TextEditingController name_c = TextEditingController();
+  TextEditingController city_c = TextEditingController();
+  TextEditingController location_c = TextEditingController();
+  TextEditingController date_c = TextEditingController();
+  TextEditingController time_c = TextEditingController();
+  TextEditingController duration_c = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -87,9 +95,9 @@ class _ConfirmationState extends State<Confirmation> {
                     return null;
                   }
                 },
-                controller: pass_c,
+                controller: name_c,
                 onSaved: (val) {
-                  pass = val!;
+                  name = val!;
                 },
                 decoration: InputDecoration(
                   filled: true,
@@ -122,9 +130,9 @@ class _ConfirmationState extends State<Confirmation> {
                     return null;
                   }
                 },
-                controller: pass_c,
+                controller: city_c,
                 onSaved: (val) {
-                  pass = val!;
+                  city = val!;
                 },
                 decoration: InputDecoration(
                   filled: true,
@@ -157,9 +165,9 @@ class _ConfirmationState extends State<Confirmation> {
                     return null;
                   }
                 },
-                controller: pass_c,
+                controller: location_c,
                 onSaved: (val) {
-                  pass = val!;
+                  location = val!;
                 },
                 decoration: InputDecoration(
                   filled: true,
@@ -192,9 +200,9 @@ class _ConfirmationState extends State<Confirmation> {
                     return null;
                   }
                 },
-                controller: pass_c,
+                controller: date_c,
                 onSaved: (val) {
-                  pass = val!;
+                  date = val!;
                 },
                 decoration: InputDecoration(
                   filled: true,
@@ -227,9 +235,9 @@ class _ConfirmationState extends State<Confirmation> {
                     return null;
                   }
                 },
-                controller: pass_c,
+                controller: time_c,
                 onSaved: (val) {
-                  pass = val!;
+                  time = val!;
                 },
                 decoration: InputDecoration(
                   filled: true,
@@ -262,9 +270,9 @@ class _ConfirmationState extends State<Confirmation> {
                     return null;
                   }
                 },
-                controller: pass_c,
+                controller: duration_c,
                 onSaved: (val) {
-                  pass = val!;
+                  duration = val!;
                 },
                 decoration: InputDecoration(
                   filled: true,

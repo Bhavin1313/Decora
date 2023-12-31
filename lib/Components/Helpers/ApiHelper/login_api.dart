@@ -8,15 +8,16 @@ class LoginApiHelper {
 
   static final LoginApiHelper loginApiHelper = LoginApiHelper._();
 
-  Future<bool?> login({required Users user}) async {
-    String api = "http://myhealth.hiteck-consulting.com/api/login.php";
+  Future<bool?> login({required String email, required String password}) async {
+    String api =
+        "https://decoraevnt.online/api/user?providedPassword=Decora957438";
 
     try {
       http.Response res = await http.post(
         Uri.parse(api),
         body: {
-          'email': user.email,
-          'password': user.password,
+          'email': email,
+          'password': password,
         },
       );
 
@@ -27,8 +28,8 @@ class LoginApiHelper {
         var decodedData = jsonDecode(res.body);
         List data = decodedData;
 
-        bool isLogin = data.any(
-            (e) => e['email'] == user.email && e['password'] == user.password);
+        bool isLogin =
+            data.any((e) => e['email'] == email && e['password'] == password);
 
         return isLogin;
       } else {

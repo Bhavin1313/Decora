@@ -20,7 +20,7 @@ class _Screen3State extends State<Screen3> {
       body: Column(
         children: [
           Expanded(
-            flex: 5,
+            flex: 4,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(

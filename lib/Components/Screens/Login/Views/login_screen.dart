@@ -137,74 +137,34 @@ class _LoginState extends State<Login> {
                         height: h * .02,
                       ),
                       GestureDetector(
-                        onTap: () {
-                          Get.offNamedUntil('/home', (routes) => false);
+                        onTap: () async {
+                          if (formKey.currentState!.validate()) {
+                            formKey.currentState!.save();
+
+                            Users user = Users(
+                              email: email!,
+                              password: pass!,
+                            );
+
+                            bool? isLogin = await LoginApiHelper.loginApiHelper
+                                    .login(
+                                        email: email_c.text,
+                                        password: pass_c.text) ??
+                                false;
+
+                            if (isLogin != null) {
+                              Get.offNamedUntil('/home', (routes) => false);
+                            } else {
+                              Get.snackbar("Decora", "Login Failed");
+                            }
+                          } else {
+                            Get.snackbar(
+                              "Decora",
+                              "Login Failed",
+                              backgroundColor: Colors.redAccent.withOpacity(.5),
+                            );
+                          }
                         },
-                        // onTap: () async {
-                        //   if (formKey.currentState!.validate()) {
-                        //     formKey.currentState!.save();
-                        //
-                        //     Users user = Users(
-                        //       email: email!,
-                        //       password: pass!,
-                        //     );
-                        //
-                        //     bool? isLogin = await LoginApiHelper.loginApiHelper
-                        //         .login(user: user);
-                        //
-                        //     if (isLogin != null) {
-                        //       Get.offNamedUntil('/home', (routes) => false);
-                        //     } else {
-                        //       Get.snackbar("Decora", "Login Failed");
-                        //     }
-                        //
-                        //     email_c.clear();
-                        //     pass_c.clear();
-                        //   } else {
-                        //     Get.snackbar(
-                        //       "Decora",
-                        //       "Login Failed",
-                        //       backgroundColor: Colors.redAccent.withOpacity(.5),
-                        //     );
-                        //   }
-                        // },
-                        // onTap: () async {
-                        //   if (formKey.currentState!.validate()) {
-                        //     formKey.currentState!.save();
-                        //
-                        //     Users user = Users(
-                        //       email: email!,
-                        //       password: pass!,
-                        //     );
-                        //
-                        //     Map<String, dynamic> res = (
-                        //       await LoginApiHelper.loginApiHelper
-                        //           .login(user: user),
-                        //     ) as Map<String, dynamic>;
-                        //
-                        //     if (res['user'] != null) {
-                        //       Get.offNamedUntil('/home', (routes) => false);
-                        //     } else if (res['error'] != null) {
-                        //       Get.snackbar("Decora", "Login Failed");
-                        //     }
-                        //
-                        //     // Get.snackbar(
-                        //     //   "Decora",
-                        //     //   "Login Successfully...",
-                        //     //   backgroundColor: Colors.green.withOpacity(0.5),
-                        //     // );
-                        //     // Get.offNamedUntil('/home', (routes) => false);
-                        //
-                        //     email_c.clear();
-                        //     pass_c.clear();
-                        //   } else {
-                        //     Get.snackbar(
-                        //       "Decora",
-                        //       "Login Failed",
-                        //       backgroundColor: Colors.redAccent.withOpacity(.5),
-                        //     );
-                        //   }
-                        // },
                         child: Container(
                           height: h * .07,
                           width: w,
