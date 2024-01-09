@@ -1,16 +1,22 @@
-# decora
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/8da9c1eb-5fdf-4309-b821-190e5f49d3ee" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/378ac4cb-864d-4cf0-8b86-a43b8c9b5bd5" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/fee2bd6b-43f1-42b4-a237-8d0405cd2952" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/b27a34bc-8164-42bc-bd9b-2d7a82dcd17a" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/49e18b93-0684-47e6-bc4a-35e0931d26b7" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/3cd97691-e03d-4347-ba63-7d627d554de0" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/03f63ca1-fe82-4009-97d4-b8d62b0c28b1" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/25f105b8-59f9-4540-a905-4231228a950e" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/e34ce290-fbff-47ba-b87d-b5632dae756a" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/fbd78a0a-ba29-4677-a713-89d949e01c21" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/736fd798-f6e2-4cb2-be98-c52bf45fdc2f" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/b96c0465-bdce-42be-a929-51694f69fa5e" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/a6f47102-9786-4f31-97e9-4613d6e97a76" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/8f8407a1-76fb-4b8d-8a99-bcb013e313a3" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/44b50f9f-3681-4b52-869e-3a19190b2de5" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/ded2a096-94e9-4f62-ab52-071d4ce9d237" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/ccbf9cb2-89e6-4813-bbca-d78815b3d42b" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/5878bf3a-0178-4957-9035-c30f609edc0f" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/c4862fe3-14e5-4261-a4a9-7962cd4045f3" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/9e6b09ad-f309-418d-8a34-030834de8662" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/20d4809e-430b-40e5-9231-6428be2da9c5" width="250px">
+<img src="https://github.com/Bhavin1313/Decora/assets/99348404/cd42232d-3b60-43c9-9594-6354e43cdbf5" width="250px">
